@@ -53,6 +53,46 @@
             bindings = <&kp PLUS>;
             key-positions = <14 15>;
         };
+
+        combo_DOUBLE_QUOTES {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <27 28>;
+        };
+
+        combo_sqt {
+            bindings = <&kp SQT>;
+            key-positions = <31 32>;
+        };
+
+        combo_pipe {
+            bindings = <&kp PIPE>;
+            key-positions = <20 21>;
+        };
+
+        combo_lass_then {
+            bindings = <&kp LESS_THAN>;
+            key-positions = <39 40>;
+        };
+
+        cpmbo_grater_then {
+            bindings = <&kp GREATER_THAN>;
+            key-positions = <45 46>;
+        };
+
+        combo_tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <12 24>;
+        };
+
+        combo_grb {
+            bindings = <&kp GRAVE>;
+            key-positions = <24 36>;
+        };
+
+        combo_underscore {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <20 21>;
+        };
     };
 
     behaviors {
