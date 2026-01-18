@@ -97,16 +97,6 @@
     };
 
     behaviors {
-        bs_lt: bs_lt {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BS_LT";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp BACKSPACE &mo 1>;
-        };
-
         ALT_SHIFT_TOGGLE: behavior-keypress {
             compatible = "zmk,behavior-keypress";
             label = "ALT+SHIFT TAP";
