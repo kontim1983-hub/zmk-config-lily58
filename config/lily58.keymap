@@ -97,6 +97,21 @@
     };
 
     behaviors {
+
+         bs_lt: bs_lt {
+              compatible = "zmk,behavior-hold-tap";
+              label = "BS_LT";
+
+              #binding-cells = <2>;
+
+              tapping-term-ms = <200>;
+              quick-tap-ms = <0>;
+
+              flavor = "tap-preferred";
+              bindings = <&kp BACKSPACE &mo 1>;
+            };
+
+
         ALT_SHIFT_TOGGLE: behavior-keypress {
             compatible = "zmk,behavior-keypress";
             label = "ALT+SHIFT TAP";
@@ -148,7 +163,7 @@
 &kp TAB                    &kp Q     &kp W   &kp E     &kp R       &kp T                                            &kp Y        &kp U                         &kp I            &kp O     &kp P     &hrm RBKT LBKT
 &kp LEFT_SHIFT             &kp A     &kp S   &kp D     &kp F       &kp G                                            &kp H        &kp J                         &kp K            &kp L     &kp SEMI  &hrm RIGHT_SHIFT SQT
 &hrm LCTRL KP_NUMBER_5     &kp Z     &kp X   &kp C     &kp V       &kp B        &kp ENTER          &kp ENTER        &kp N        &kp M                         &kp COMMA        &kp DOT   &kp FSLH  &kp BACKSLASH
-                                             &kp LALT  &kp LGUI    &lt 2 SPACE  &lt 1 BACKSPACE    &lt 1 BACKSPACE  &lt 2 SPACE  &hrm KP_NUMBER_3 KP_NUMBER_1  &kp KP_NUMBER_1
+                                             &kp LALT  &kp LGUI    &lt 2 SPACE  &lt bs_lt          &lt bs_lt        &lt 2 SPACE  &hrm KP_NUMBER_3 KP_NUMBER_1  &kp KP_NUMBER_1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
