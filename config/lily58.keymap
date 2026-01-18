@@ -20,82 +20,90 @@
         };
 
         combo_rightpar {
-            bindings = <&kp RIGHT_PARENTHESIS>;
             key-positions = <18 19>;
+            bindings = <&kp RIGHT_PARENTHESIS>;
         };
 
         combo_leftbarcket {
-            bindings = <&kp LEFT_BRACKET>;
+            bindings = <&kp LBRC>;
             key-positions = <28 29>;
+            bindings = <&kp LBRC>;   // [
         };
 
-        combo_rightbarcket {
-            bindings = <&kp RIGHT_BRACKET>;
+        combo_rightbracket {
             key-positions = <30 31>;
+            bindings = <&kp RBRC>;   // ]
         };
 
-        combo_LEFT_BRACE {
-            bindings = <&kp LEFT_BRACE>;
+        combo_leftbrace {
             key-positions = <40 41>;
+            bindings = <&kp LBKT>;   // {
         };
 
-        combo_RIGHT_BRACE {
-            bindings = <&kp RIGHT_BRACE>;
+        combo_rightbrace {
             key-positions = <44 45>;
+            bindings = <&kp RBKT>;   // }
         };
 
-        combo_MINUS {
-            bindings = <&kp MINUS>;
+        combo_minus {
             key-positions = <15 16>;
+            bindings = <&kp MINUS>;
         };
 
         combo_plus {
-            bindings = <&kp PLUS>;
             key-positions = <14 15>;
+            bindings = <&kp PLUS>;
         };
 
-        combo_DOUBLE_QUOTES {
-            bindings = <&kp DOUBLE_QUOTES>;
+        combo_double_quotes {
             key-positions = <27 28>;
+            bindings = <&kp DOUBLE_QUOTES>;
         };
 
         combo_sqt {
-            bindings = <&kp SQT>;
             key-positions = <31 32>;
+            bindings = <&kp SQT>;
         };
 
         combo_pipe {
-            bindings = <&kp PIPE>;
             key-positions = <20 21>;
+            bindings = <&kp PIPE>;
         };
 
-        combo_lass_then {
-            bindings = <&kp LESS_THAN>;
+        combo_less_than {
             key-positions = <39 40>;
+            bindings = <&kp LESS_THAN>;
         };
 
-        cpmbo_grater_then {
-            bindings = <&kp GREATER_THAN>;
+        combo_greater_than {
             key-positions = <45 46>;
+            bindings = <&kp GREATER_THAN>;
         };
 
         combo_tilde {
-            bindings = <&kp TILDE>;
             key-positions = <12 24>;
+            bindings = <&kp TILDE>;
         };
 
-        combo_grb {
-            bindings = <&kp GRAVE>;
+        combo_grave {
             key-positions = <24 36>;
+            bindings = <&kp GRAVE>;
         };
 
         combo_underscore {
-            bindings = <&kp UNDERSCORE>;
             key-positions = <20 21>;
+            bindings = <&kp UNDERSCORE>;
         };
     };
 
     behaviors {
+        ALT_SHIFT_TOGGLE: behavior-keypress {
+            compatible = "zmk,behavior-keypress";
+            label = "ALT+SHIFT TAP";
+            #binding-cells = <2>;
+            key-press = <&kp LALT &kp LSHIFT>;
+        };
+
         ss_hs_modmorph: ss_hs_modmorph {
             compatible = "zmk,behavior-mod-morph";
             label = "SS_HS_MODMORPH";
@@ -129,18 +137,18 @@
 
         default_layer {
             // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-            // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+            // |   `   |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   DEL    |
+            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |  [/]     |
+            // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   SHIFT  |
+            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   |     \    |
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC    &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                                           &kp N6       &kp N7                  &kp N8        &kp N9   &kp N0    &kp EQUAL
-&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                                            &kp Y        &kp U                   &kp I         &kp O    &kp P     &kp MINUS
-&kp LCTRL  &kp A   &kp S   &kp D     &kp F     &kp G                                            &kp H        &kp J                   &kp K         &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z   &kp X   &kp C     &kp V     &kp B        &kp ENTER          &kp ENTER        &kp N        &kp M                   &kp COMMA     &kp DOT  &kp FSLH  &kp BACKSLASH
-                           &kp LALT  &kp LGUI  &lt 2 SPACE  &lt 1 BACKSPACE    &lt 1 BACKSPACE  &lt 2 SPACE  &hrm NUMBER_2 NUMBER_1  &kp NUMBER_3
+&hrm (ESC) LA(LEFT_SHIFT)  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT                                        &kp CARET    &kp AMPS                      &kp ASTRK        &kp LPAR  &kp RPAR  &kp DEL
+&kp TAB                    &kp Q     &kp W   &kp E     &kp R       &kp T                                            &kp Y        &kp U                         &kp I            &kp O     &kp P     &hrm RBKT LBKT
+&kp LEFT_SHIFT             &kp A     &kp S   &kp D     &kp F       &kp G                                            &kp H        &kp J                         &kp K            &kp L     &kp SEMI  &hrm RIGHT_SHIFT SQT
+&hrm LCTRL KP_NUMBER_5     &kp Z     &kp X   &kp C     &kp V       &kp B        &kp ENTER          &kp ENTER        &kp N        &kp M                         &kp COMMA        &kp DOT   &kp FSLH  &kp BACKSLASH
+                                             &kp LALT  &kp LGUI    &lt 2 SPACE  &lt 1 BACKSPACE    &lt 1 BACKSPACE  &lt 2 SPACE  &hrm KP_NUMBER_3 KP_NUMBER_1  &kp KP_NUMBER_1
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -155,11 +163,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans     &trans     &trans    &trans    &trans
-&kp F1      &kp F2            &kp F3             &kp F4             &kp F5        &kp F6                          &kp F7     &kp F8     &kp F9     &kp F10   &kp F11   &kp F12
-&kp GRAVE   &kp EXCL          &kp AT             &kp HASH           &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp TILDE
-&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans        &trans        &trans    &trans  &trans     &kp MINUS  &kp PLUS   &kp LBRC  &kp RBRC  &kp PIPE
-                                                 &trans             &trans        &trans        &trans    &trans  &trans     &trans     &trans
+&bt BT_CLR  &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2       &bt BT_SEL 3  &bt BT_SEL 4                    &trans     &trans                        &trans           &trans  &trans    &trans
+&kp F1      &kp F2            &kp F3             &kp F4             &kp F5        &kp F6                          &kp F7     &kp N7                        &kp N8           &kp N9  &kp F11   &kp F12
+&kp GRAVE   &kp EXCL          &kp AT             &kp HASH           &kp DOLLAR    &kp PRCNT                       &kp CARET  &kp N4                        &kp N5           &kp N6  &kp RPAR  &kp TILDE
+&trans      &ext_power EP_ON  &ext_power EP_OFF  &ext_power EP_TOG  &trans        &trans        &trans    &trans  &trans     &kp N1                        &kp N2           &kp N3  &kp N0    &kp PIPE
+                                                 &trans             &trans        &trans        &trans    &trans  &trans     &hrm KP_NUMBER_3 KP_NUMBER_1  &kp KP_NUMBER_2
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -174,11 +182,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans     &trans  &trans  &trans   &trans   &trans                     &trans       &trans     &trans     &trans    &trans     &trans
-&kp GRAVE  &kp N1  &kp N2  &kp N3   &kp N4   &kp N5                     &kp N6       &kp N7     &kp N8     &kp N9    &kp N0     &trans
-&kp F1     &kp F2  &kp F3  &kp F4   &kp F5   &kp F6                     &trans       &kp LEFT   &kp DOWN   &kp UP    &kp RIGHT  &trans
-&kp F7     &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &trans    &trans  &kp KP_PLUS  &kp MINUS  &kp EQUAL  &kp LBKT  &kp RBKT   &kp BSLH
-                           &trans   &trans   &trans   &trans    &trans  &trans       &trans     &trans
+&trans     &trans  &trans       &trans    &trans         &trans                      &trans       &trans       &trans     &trans         &trans    &trans
+&kp GRAVE  &kp N1  &kp PAGE_UP  &kp UP    &kp PAGE_DOWN  &kp HOME                    &kp N6       &kp PAGE_UP  &kp UP     &kp PAGE_DOWN  &kp HOME  &trans
+&kp F1     &kp F2  &kp LEFT     &kp DOWN  &kp RIGHT      &kp END                     &trans       &kp LEFT     &kp DOWN   &kp RIGHT      &kp END   &trans
+&kp F7     &kp F8  &kp F9       &kp F10   &kp F11        &kp F12   &trans    &trans  &kp KP_PLUS  &kp MINUS    &kp EQUAL  &kp LBKT       &kp RBKT  &kp BSLH
+                                &trans    &trans         &trans    &trans    &trans  &trans       &trans       &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
