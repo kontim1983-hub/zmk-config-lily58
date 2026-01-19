@@ -66,7 +66,7 @@
         };
 
         combo_pipe {
-            key-positions = <20 21>;
+            key-positions = <20 19>;
             bindings = <&kp PIPE>;
         };
 
@@ -93,6 +93,11 @@
         combo_anderscore {
             bindings = <&kp UNDERSCORE>;
             key-positions = <20 19>;
+        };
+
+        combo_equal {
+            bindings = <&kp EQUAL>;
+            key-positions = <36 37>;
         };
     };
 
