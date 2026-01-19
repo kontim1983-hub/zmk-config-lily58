@@ -92,7 +92,7 @@
 
         combo_anderscore {
             bindings = <&kp UNDERSCORE>;
-            key-positions = <20 19>;
+            key-positions = <20 21>;
         };
 
         combo_equal {
