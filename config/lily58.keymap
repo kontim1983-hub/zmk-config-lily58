@@ -90,14 +90,14 @@
             bindings = <&kp GRAVE>;
         };
 
-        combo_anderscore {
-            bindings = <&kp UNDERSCORE>;
-            key-positions = <20 21>;
-        };
-
         combo_equal {
             bindings = <&kp EQUAL>;
             key-positions = <36 37>;
+        };
+
+        combo_ander {
+            bindings = <&kp UNDER>;
+            key-positions = <20 21>;
         };
     };
 
