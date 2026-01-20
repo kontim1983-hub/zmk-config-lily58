@@ -107,7 +107,7 @@
 
         combo_double_dot {
             bindings = <&kp KP_NUMBER_5>;
-            key-positions = <36 37>;
+            key-positions = <24 25>;
         };
 
         combo_win {
