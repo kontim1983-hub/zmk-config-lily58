@@ -166,16 +166,20 @@
             bindings = <&kp>, <&kp>;
         };
 
-        new_hs_tapdance: new_hs_tapdance {
+        new_hs_tapdance_dot: new_hs_tapdance_dot {
             compatible = "zmk,behavior-tap-dance";
-            label = "NEW_HS_TAPDANCE";
+            label = "NEW_HS_TAPDANCE_DOT";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings =
-                <&kp ENTER>,
-                <&kp KP_NUMBER_2>,
-                <&kp KP_NUMBER_1>,
-                <&kp KP_NUMBER_3>;
+            bindings = <&kp ENTER>, <&kp NUMBER_1>;
+        };
+
+        new_hs_tapdance_coma: new_hs_tapdance_coma {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NEW_HS_TAPDANCE_COMA";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp ENTER>, <&kp KP_NUMBER_2>;
         };
     };
 
@@ -191,11 +195,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp LA(LSHFT)   &hrm EXCLAMATION NUMBER_1  &hrm AT_SIGN N2  &hrm HASH NUMBER_3  &hrm DOLLAR N4    &hrm PRCNT NUMBER_5                                        &hrm CARET N6  &hrm AMPS N7        &hrm ASTRK N8    &hrm LPAR N9  &kp N0    &lt 1 DELETE
-&kp TAB         &kp Q                      &kp W            &kp E               &kp R             &kp T                                                      &kp Y          &kp U               &kp I            &kp O         &kp P     &hrm RBKT LBKT
-&kp LEFT_SHIFT  &kp A                      &kp S            &kp D               &mt LEFT_SHIFT F  &kp G                                                      &kp H          &hrm RIGHT_SHIFT J  &kp K            &kp L         &kp SEMI  &hrm RIGHT_SHIFT SQT
-&kp LCTRL       &kp Z                      &kp X            &kp C               &kp V             &kp B                &kp BACKSPACE       &kp BACKSPACE     &kp N          &kp M               &kp COMMA        &kp DOT       &kp FSLH  &kp BACKSLASH
-                                                            &kp LALT            &lt 2 BACKSPACE   &lt 1 SPACE          &new_hs_tapdance    &new_hs_tapdance  &lt 1 SPACE    &lt 2 BACKSPACE     &kh_hs_tapdance
+&kp LA(LSHFT)   &hrm EXCLAMATION NUMBER_1  &hrm AT_SIGN N2  &hrm HASH NUMBER_3  &hrm DOLLAR N4    &hrm PRCNT NUMBER_5                                                 &hrm CARET N6  &hrm AMPS N7        &hrm ASTRK N8  &hrm LPAR N9  &kp N0    &lt 1 DELETE
+&kp TAB         &kp Q                      &kp W            &kp E               &kp R             &kp T                                                               &kp Y          &kp U               &kp I          &kp O         &kp P     &hrm RBKT LBKT
+&kp LEFT_SHIFT  &kp A                      &kp S            &kp D               &mt LEFT_SHIFT F  &kp G                                                               &kp H          &hrm RIGHT_SHIFT J  &kp K          &kp L         &kp SEMI  &hrm RIGHT_SHIFT SQT
+&kp LCTRL       &kp Z                      &kp X            &kp C               &kp V             &kp B                &kp BACKSPACE           &kp BACKSPACE          &kp N          &kp M               &kp COMMA      &kp DOT       &kp FSLH  &kp BACKSLASH
+                                                            &kp LALT            &lt 2 BACKSPACE   &lt 1 SPACE          &new_hs_tapdance_dot    &new_hs_tapdance_coma  &lt 1 SPACE    &lt 2 BACKSPACE     &kp QUESTION
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
