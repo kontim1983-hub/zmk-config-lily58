@@ -149,7 +149,7 @@
             key-positions = <38 39 40>;
         };
 
-        combo_space_right {
+        combo_backspace_right {
             bindings = <&kp BACKSPACE>;
             key-positions = <45 46 47>;
         };
